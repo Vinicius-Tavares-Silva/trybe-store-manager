@@ -1,4 +1,4 @@
-const model = require('../../model/products');
+const model = require('../../model/sales');
 
 module.exports = async (req, res, next) => {
   try {
@@ -11,8 +11,8 @@ module.exports = async (req, res, next) => {
       },
       });
     }
-    const updatedObject = await model.update({ ...object, ...req.body });
-    return res.status(200).send(updatedObject);
+    await model.remove(id);
+    return res.status(200).send(object);
   } catch (err) {
     next(err);
   }
