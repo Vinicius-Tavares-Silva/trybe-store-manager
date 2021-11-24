@@ -7,7 +7,7 @@ module.exports = async (req, res, next) => {
     if (!object) {
       return res.status(422).send({ err: {
         code: 'invalid_data',
-        message: 'Wrong id format',
+        message: 'Wrong sale ID format',
       },
       });
     }
